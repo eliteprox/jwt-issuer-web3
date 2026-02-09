@@ -4,6 +4,7 @@ import (
 	"crypto/rsa"
 	"encoding/base64"
 	"encoding/json"
+	"log"
 	"net/http"
 )
 
@@ -57,6 +58,7 @@ func JWKSHandler(publicKey *rsa.PublicKey, keyID string) http.HandlerFunc {
 	jwksBytes, _ := json.Marshal(jwkSet)
 
 	return func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("INFO: JWKS request from %s", r.RemoteAddr)
 		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("Cache-Control", "public, max-age=3600")
 		w.Write(jwksBytes)

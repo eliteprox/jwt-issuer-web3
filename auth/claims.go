@@ -17,4 +17,7 @@ type Claims struct {
 
 	// Tier is the user's service tier, e.g. "standard", "premium"
 	Tier string `json:"tier,omitempty"`
+
+	// Name is a human-readable label for this token (e.g. "Production App")
+	Name string `json:"name,omitempty"`
 }

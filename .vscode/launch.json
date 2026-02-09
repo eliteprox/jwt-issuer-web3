@@ -13,7 +13,8 @@
                 "-jwkPrivateKeyPath", "${workspaceFolder}/private.pem",
                 "-jwkKeyID", "livepeer-key-1",
                 "-siweDomain", "localhost",
-                "-tokenTTL", "24h"
+                "-tokenTTL", "24h",
+                // "-allowedOrigins", "https://livepeer.ai"
             ],
         },
     ]
